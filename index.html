@@ -119,13 +119,13 @@ BP. 6356, Rabat-Instituts 10101, Rabat, Morocco</div>
 			<li class="h6">Concatenate multiple alignements</li>
 				<p> In this tutorial we will learn how to concatenate multiple aligement in order to performe phylogenomic analysis  </p>
 				<ol>
-					<li>Imagine that we have several file of alignement of n genes within 10 speceis like this</li>
+					<li>Imagine that we have several file of alignements of n genes within 10 species as below</li>
 					<code> cat file1.aln</code><br>
 					<code> >gene1_sp1<br> AGCGRGC---TGCGT<br>AGCGRGCGCGTGCGT<br>AGCGRGC---TGCGT</code><br>
 					<code> >gene1_sp2<br> AGCGRGC---TGCGT<br>AGCGRGCGCGTGCGT<br>AGCGRGC---T--GT</code><br>
 					<code> >gene1_sp3<br> AGCGRGC---TGTGT<br>AGCGTGCCAGTGCGT<br>AGCCCGC---TGAAT</code><br>
 					<br>
-					<li>We will linearise evry file to have one line per sequence using awka dn for loop</li>
+					<li>We will linearise evry file to have one line per sequence using awk and for loop</li>
 					<code>for file in *.aln; do awk '{printf /^>/ ? "\n"$0"\t" : $0}' $file > $file; done</code>
 		</ol>
 			</li>
